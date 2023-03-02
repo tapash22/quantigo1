@@ -2,6 +2,7 @@
 <div id="app">
     <div :class="theme === 'light' ? 'light-theme' : 'dark-theme'" class="main-body">
         <div class="nav">
+          <h1>Video Annotation</h1>
             <label class="switch">
                 <input type="checkbox" @click="changeTheam" checked>
                 <span class="slider round"></span>
@@ -68,28 +69,40 @@ export default defineComponent({
 }
 
 .dark-theme {
-    background-color: black;
+    background-color:rgb(61, 58, 58);
     color: white;
 }
 
 .main-body .nav {
+
+  width: 100%;
     display: flex;
-    justify-content: end;
-    padding: 10px;
-    background: black;
+    justify-content: space-between;
+    padding: 0;
+    background: rgb(61, 58, 58);
+    box-shadow: 0 0 10px red;
+}
+.main-body .nav h1{
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  margin-left: 50px;
 }
 .main-body .video{
   width: 100%;
-  height: auto;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .video .vdo{
-  width: 80%;
-  height: 100%;
-
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 80%;
 }
 
 .switch {
@@ -97,6 +110,8 @@ export default defineComponent({
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin-right: 50px;
+    margin-top: 10px;
 }
 
 .switch input {
